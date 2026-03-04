@@ -32,6 +32,12 @@ export function badRequest(c: Context, message: string) {
   );
 }
 
+const SLUG_RE = /^[a-z0-9-]+$/;
+
+export function isValidSlug(slug: string): boolean {
+  return SLUG_RE.test(slug) && slug.length <= 100;
+}
+
 export function tooManyRequests(c: Context) {
   return c.json<ApiErrorResponse>(
     { error: { code: "RATE_LIMITED", message: "Too many requests. Please try again later." } },

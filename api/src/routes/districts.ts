@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { success, notFound } from "../lib/response.js";
+import { success, notFound, badRequest, isValidSlug } from "../lib/response.js";
 
 type Env = { Bindings: { DB: D1Database } };
 
@@ -8,6 +8,7 @@ const app = new Hono<Env>();
 // GET /v1/districts/:slug
 app.get("/:slug", async (c) => {
   const slug = c.req.param("slug");
+  if (!isValidSlug(slug)) return badRequest(c, "Invalid slug format");
   const db = c.env.DB;
 
   const district = await db
@@ -43,6 +44,7 @@ app.get("/:slug", async (c) => {
 // GET /v1/districts/:slug/wards
 app.get("/:slug/wards", async (c) => {
   const slug = c.req.param("slug");
+  if (!isValidSlug(slug)) return badRequest(c, "Invalid slug format");
   const db = c.env.DB;
 
   const district = await db

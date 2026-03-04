@@ -1,7 +1,5 @@
 import { Hono } from "hono";
-import { zValidator } from "@hono/zod-openapi";
-import { success, notFound } from "../lib/response.js";
-import { SlugParam } from "../lib/validators.js";
+import { success, notFound, badRequest, isValidSlug } from "../lib/response.js";
 
 type Env = { Bindings: { DB: D1Database } };
 
@@ -35,6 +33,7 @@ app.get("/", async (c) => {
 // GET /v1/regions/:slug
 app.get("/:slug", async (c) => {
   const slug = c.req.param("slug");
+  if (!isValidSlug(slug)) return badRequest(c, "Invalid slug format");
   const db = c.env.DB;
 
   const region = await db
@@ -67,6 +66,7 @@ app.get("/:slug", async (c) => {
 // GET /v1/regions/:slug/districts
 app.get("/:slug/districts", async (c) => {
   const slug = c.req.param("slug");
+  if (!isValidSlug(slug)) return badRequest(c, "Invalid slug format");
   const db = c.env.DB;
 
   const region = await db
