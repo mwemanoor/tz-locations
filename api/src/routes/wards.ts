@@ -64,11 +64,14 @@ app.get("/:slug/streets", async (c) => {
 
   if (!ward) return notFound(c, `Ward '${slug}' not found`);
 
+  const limit = Math.min(Math.max(Number(c.req.query("limit")) || 100, 1), 500);
+  const offset = Math.max(Number(c.req.query("offset")) || 0, 0);
+
   const { results } = await db
     .prepare(
-      "SELECT id, name, postcode FROM streets WHERE ward_id = ? ORDER BY name"
+      "SELECT id, name, postcode FROM streets WHERE ward_id = ? ORDER BY name LIMIT ? OFFSET ?"
     )
-    .bind(ward.id)
+    .bind(ward.id, limit, offset)
     .all();
 
   const data = results.map((s: any) => ({
@@ -84,7 +87,7 @@ app.get("/:slug/streets", async (c) => {
     },
   }));
 
-  return success(c, data, { total: data.length, ward: ward.name as string });
+  return success(c, data, { total: data.length, ward: ward.name as string, limit, offset });
 });
 
 export default app;
