@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.wrangler/
+.dev.vars
+*.log
+
+# Scraper intermediate data (keep final JSONs)
+scraper/data/*.checkpoint.json
+scraper/__pycache__/
+scraper/.venv/
+
+# Environment
+.env
+.env.local
