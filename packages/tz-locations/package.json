@@ -1,0 +1,54 @@
+{
+  "name": "tz-locations",
+  "version": "1.0.0",
+  "description": "Complete Tanzania location data — regions, districts, wards, streets & postcodes",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src/data"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "tanzania",
+    "locations",
+    "regions",
+    "districts",
+    "wards",
+    "streets",
+    "postcodes",
+    "address",
+    "africa",
+    "east-africa",
+    "offline",
+    "tz",
+    "geolocation",
+    "address-data",
+    "tanzania-postcodes"
+  ],
+  "homepage": "https://tz-locations-docs.pages.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mwemanoor/tz-locations.git",
+    "directory": "packages/tz-locations"
+  },
+  "bugs": {
+    "url": "https://github.com/mwemanoor/tz-locations/issues"
+  },
+  "author": "Mwema Noor",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
