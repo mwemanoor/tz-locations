@@ -17,6 +17,10 @@ const app = new Hono<Env>();
 
 // Global middleware
 app.use("*", cors());
+app.use("*", async (c, next) => {
+  await next();
+  c.header("X-Content-Type-Options", "nosniff");
+});
 app.use("/v1/*", rateLimit);
 app.use("/v1/*", cacheControl(86400));
 
