@@ -22,7 +22,7 @@ function cleanupStore() {
 }
 
 export const rateLimit: MiddlewareHandler = async (c, next) => {
-  const ip = c.req.header("CF-Connecting-IP") ?? c.req.header("X-Forwarded-For") ?? "unknown";
+  const ip = c.req.header("CF-Connecting-IP") ?? "unknown";
   const now = Date.now();
 
   let entry = store.get(ip);
@@ -44,7 +44,7 @@ export const rateLimit: MiddlewareHandler = async (c, next) => {
   await next();
 
   // Periodic cleanup
-  if (store.size > 10_000) {
+  if (store.size > 1_000) {
     cleanupStore();
   }
 };
