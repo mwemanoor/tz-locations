@@ -56,7 +56,6 @@ function main() {
 
   const sql: string[] = [];
   sql.push("-- Auto-generated seed data");
-  sql.push("BEGIN TRANSACTION;");
 
   // Build lookup maps
   const regionIdMap = new Map<string, number>();
@@ -160,8 +159,6 @@ function main() {
       `INSERT INTO locations_fts (name, type, postcode, full_path, entity_id) VALUES ('${escapeSql(w.name)}', 'ward', '${escapeSql(postcode)}', '${escapeSql(path)}', '${wId}');`
     );
   }
-
-  sql.push("COMMIT;");
 
   const output = sql.join("\n");
   const outPath = resolve(__dirname, "seed.sql");
