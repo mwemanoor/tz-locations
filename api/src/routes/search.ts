@@ -9,7 +9,7 @@ const app = new Hono<Env>();
 app.get("/", async (c) => {
   const q = c.req.query("q");
   const type = c.req.query("type");
-  const limit = Math.min(Math.max(Number(c.req.query("limit") ?? "10"), 1), 50);
+  const limit = Math.min(Math.max(Number(c.req.query("limit")) || 10, 1), 50);
 
   if (!q || q.length < 1) {
     return badRequest(c, "Query parameter 'q' is required");
