@@ -15,7 +15,7 @@ app.get("/", async (c) => {
   }
 
   const db = c.env.DB;
-  const sanitized = q.replace(/['"]/g, "").trim();
+  const sanitized = q.replace(/[^a-zA-Z0-9\s]/g, "").trim();
 
   try {
     // FTS5 prefix search

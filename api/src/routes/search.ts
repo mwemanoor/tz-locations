@@ -23,7 +23,7 @@ app.get("/", async (c) => {
   const db = c.env.DB;
 
   // Sanitize FTS query: escape special chars and add quotes
-  const sanitized = q.replace(/['"]/g, "").trim();
+  const sanitized = q.replace(/[^a-zA-Z0-9\s]/g, "").trim();
 
   let query: string;
   let params: any[];
