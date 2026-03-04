@@ -4,11 +4,27 @@ dist/
 .dev.vars
 *.log
 
+# Generated files
+api/src/db/seed.sql
+
 # Scraper intermediate data (keep final JSONs)
 scraper/data/*.checkpoint.json
+scraper/data/locations.json
 scraper/__pycache__/
 scraper/.venv/
+scraper/.pytest_cache/
 
 # Environment
 .env
 .env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Turbo
+.turbo/
