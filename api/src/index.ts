@@ -37,7 +37,7 @@ app.route("/v1/stats", stats);
 // Root
 app.get("/", (c) => {
   return c.json({
-    name: "address-tz",
+    name: "tz-locations-api",
     description: "Tanzania Locations API — Regions, Districts, Wards, Streets & Postcodes",
     version: "1.0.0",
     docs: "/v1/docs",
