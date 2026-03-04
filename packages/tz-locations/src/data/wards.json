@@ -1295,8 +1295,8 @@
     "postcode": "12125"
   },
   {
-    "name": "Gerezani Gerezani",
-    "slug": "gerezani-gerezani",
+    "name": "Gerezani",
+    "slug": "gerezani",
     "district_slug": "ilala-cbd",
     "region_slug": "dar-es-salaam",
     "postcode": "11107"
@@ -1309,8 +1309,8 @@
     "postcode": "11108"
   },
   {
-    "name": "Kariakoo Kariakoo",
-    "slug": "kariakoo-kariakoo",
+    "name": "Kariakoo",
+    "slug": "kariakoo",
     "district_slug": "ilala-cbd",
     "region_slug": "dar-es-salaam",
     "postcode": "11106"
@@ -1442,8 +1442,8 @@
     "postcode": "14121"
   },
   {
-    "name": "Kigogo Kigogo",
-    "slug": "kigogo-kigogo",
+    "name": "Kigogo",
+    "slug": "kigogo",
     "district_slug": "kinondoni",
     "region_slug": "dar-es-salaam",
     "postcode": "14118"
@@ -1596,8 +1596,8 @@
     "postcode": "15117"
   },
   {
-    "name": "Keko Keko",
-    "slug": "keko-keko",
+    "name": "Keko",
+    "slug": "keko",
     "district_slug": "temeke",
     "region_slug": "dar-es-salaam",
     "postcode": "15104"
@@ -1806,8 +1806,8 @@
     "postcode": "16105"
   },
   {
-    "name": "Sinza Sinza",
-    "slug": "sinza-sinza",
+    "name": "Sinza",
+    "slug": "sinza",
     "district_slug": "ubungo",
     "region_slug": "dar-es-salaam",
     "postcode": "16102"
@@ -7728,8 +7728,8 @@
     "postcode": "25102"
   },
   {
-    "name": "Kiusa Kiusa",
-    "slug": "kiusa-kiusa",
+    "name": "Kiusa",
+    "slug": "kiusa",
     "district_slug": "moshi-cbd",
     "region_slug": "kilimanjaro",
     "postcode": "25107"
@@ -9002,8 +9002,8 @@
     "postcode": "65110"
   },
   {
-    "name": "Ndoro Ndoro",
-    "slug": "ndoro-ndoro",
+    "name": "Ndoro",
+    "slug": "ndoro",
     "district_slug": "lindi-cbd",
     "region_slug": "lindi",
     "postcode": "65103"
@@ -10759,8 +10759,8 @@
     "postcode": "31511"
   },
   {
-    "name": "Nyasura Nyasura",
-    "slug": "nyasura-nyasura",
+    "name": "Nyasura",
+    "slug": "nyasura",
     "district_slug": "bunda",
     "region_slug": "mara",
     "postcode": "31504"
@@ -11018,8 +11018,8 @@
     "postcode": "31127"
   },
   {
-    "name": "Kitaji Kitaji",
-    "slug": "kitaji-kitaji",
+    "name": "Kitaji",
+    "slug": "kitaji",
     "district_slug": "musoma-cbd",
     "region_slug": "mara",
     "postcode": "31104"
@@ -11081,8 +11081,8 @@
     "postcode": "31129"
   },
   {
-    "name": "Mwigobero Mwigobero",
-    "slug": "mwigobero-mwigobero",
+    "name": "Mwigobero",
+    "slug": "mwigobero",
     "district_slug": "musoma-cbd",
     "region_slug": "mara",
     "postcode": "31102"
@@ -12670,8 +12670,8 @@
     "postcode": "53109"
   },
   {
-    "name": "Majengo Majengo",
-    "slug": "majengo-majengo",
+    "name": "Majengo",
+    "slug": "majengo",
     "district_slug": "mbeya-cbd",
     "region_slug": "mbeya",
     "postcode": "53110"
@@ -13195,8 +13195,8 @@
     "postcode": "71102"
   },
   {
-    "name": "Kilimahewa Kilimahewa",
-    "slug": "kilimahewa-kilimahewa",
+    "name": "Kilimahewa",
+    "slug": "kilimahewa",
     "district_slug": "mjini",
     "region_slug": "mjini-magharibi",
     "postcode": "71114"
@@ -13489,8 +13489,8 @@
     "postcode": "67520"
   },
   {
-    "name": "Katindiuka Katindiuka",
-    "slug": "katindiuka-katindiuka",
+    "name": "Katindiuka",
+    "slug": "katindiuka",
     "district_slug": "kilombero",
     "region_slug": "morogoro",
     "postcode": "67530"
@@ -13846,8 +13846,8 @@
     "postcode": "67419"
   },
   {
-    "name": "Mbumi Mbumi",
-    "slug": "mbumi-mbumi",
+    "name": "Mbumi",
+    "slug": "mbumi",
     "district_slug": "kilosa",
     "region_slug": "morogoro",
     "postcode": "67402"
@@ -15428,8 +15428,8 @@
     "postcode": "63113"
   },
   {
-    "name": "Kisungule Kisungule",
-    "slug": "kisungule-kisungule",
+    "name": "Kisungule",
+    "slug": "kisungule",
     "district_slug": "mtwara-cbd",
     "region_slug": "mtwara",
     "postcode": "63112"
@@ -18263,8 +18263,8 @@
     "postcode": "75201"
   },
   {
-    "name": "Msuka Msuka",
-    "slug": "msuka-msuka",
+    "name": "Msuka",
+    "slug": "msuka",
     "district_slug": "micheweni",
     "region_slug": "pemba-north",
     "postcode": "75210"
@@ -18375,8 +18375,8 @@
     "postcode": "75111"
   },
   {
-    "name": "Mtambwe Mtambwe",
-    "slug": "mtambwe-mtambwe",
+    "name": "Mtambwe",
+    "slug": "mtambwe",
     "district_slug": "wete",
     "region_slug": "pemba-north",
     "postcode": "75109"
@@ -24262,8 +24262,8 @@
     "postcode": "43113"
   },
   {
-    "name": "Unyianga Unyianga",
-    "slug": "unyianga-unyianga",
+    "name": "Unyianga",
+    "slug": "unyianga",
     "district_slug": "singida-cbd",
     "region_slug": "singida",
     "postcode": "43117"
@@ -24682,8 +24682,8 @@
     "postcode": "54424"
   },
   {
-    "name": "Majengo Majengo",
-    "slug": "majengo-majengo",
+    "name": "Majengo",
+    "slug": "majengo",
     "district_slug": "momba",
     "region_slug": "songwe",
     "postcode": "54417"
@@ -28070,8 +28070,8 @@
     "postcode": "21112"
   },
   {
-    "name": "Usagara Usagara",
-    "slug": "usagara-usagara",
+    "name": "Usagara",
+    "slug": "usagara",
     "district_slug": "tanga-cbd",
     "region_slug": "tanga",
     "postcode": "21103"
@@ -28238,8 +28238,8 @@
     "postcode": "72207"
   },
   {
-    "name": "Dunga Dunga",
-    "slug": "dunga-dunga",
+    "name": "Dunga",
+    "slug": "dunga",
     "district_slug": "kati",
     "region_slug": "unguja-south",
     "postcode": "72201"
@@ -28357,8 +28357,8 @@
     "postcode": "72109"
   },
   {
-    "name": "Muyuni Muyuni",
-    "slug": "muyuni-muyuni",
+    "name": "Muyuni",
+    "slug": "muyuni",
     "district_slug": "kusini",
     "region_slug": "unguja-south",
     "postcode": "72106"
