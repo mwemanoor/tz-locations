@@ -24,6 +24,7 @@ app.get("/", async (c) => {
 
   // Sanitize FTS query: escape special chars and add quotes
   const sanitized = q.replace(/[^a-zA-Z0-9\s]/g, "").trim();
+  if (!sanitized) return badRequest(c, "Query must contain at least one alphanumeric character");
 
   let query: string;
   let params: any[];

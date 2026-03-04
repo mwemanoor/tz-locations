@@ -16,6 +16,7 @@ app.get("/", async (c) => {
 
   const db = c.env.DB;
   const sanitized = q.replace(/[^a-zA-Z0-9\s]/g, "").trim();
+  if (!sanitized) return badRequest(c, "Query must contain at least one alphanumeric character");
 
   try {
     // FTS5 prefix search
