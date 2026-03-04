@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tz-locations — Tanzania Locations API & npm Package</title>
+  <meta name="description" content="The definitive Tanzania locations API — 31 regions, 168 districts, 4,054 wards, 75,061 streets with postcodes. REST API + offline npm package.">
+  <meta name="keywords" content="Tanzania, locations, API, regions, districts, wards, streets, postcodes, address, npm, TypeScript">
+  <meta property="og:title" content="tz-locations — Tanzania Locations API">
+  <meta property="og:description" content="31 regions, 168 districts, 4,054 wards, 75,061 streets with postcodes. REST API + npm package.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇹🇿</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8' },
+            surface: { 800: '#1e1e2e', 900: '#11111b', 950: '#0a0a14' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: #0a0a14; color: #e4e4e7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    code, pre { font-family: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, monospace; }
+    pre { background: #1e1e2e; border: 1px solid #2a2a3e; border-radius: 8px; overflow-x: auto; }
+    .method-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+    .method-get { background: #065f46; color: #6ee7b7; }
+    .endpoint-card { border: 1px solid #2a2a3e; border-radius: 12px; background: #1e1e2e; transition: border-color 0.2s; }
+    .endpoint-card:hover { border-color: #3b82f6; }
+    .copy-btn { opacity: 0; transition: opacity 0.2s; }
+    .code-block:hover .copy-btn { opacity: 1; }
+    .nav-link { transition: color 0.2s; }
+    .nav-link:hover { color: #60a5fa; }
+    .try-response { max-height: 300px; overflow-y: auto; }
+    ::selection { background: #3b82f6; color: white; }
+    @media (max-width: 768px) { .copy-btn { opacity: 1; } }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="sticky top-0 z-50 border-b border-white/5 backdrop-blur-md bg-surface-950/80">
+    <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="#" class="text-lg font-bold text-white">tz-locations</a>
+      <div class="hidden md:flex items-center gap-6 text-sm text-zinc-400">
+        <a href="#api" class="nav-link">API Reference</a>
+        <a href="#package" class="nav-link">npm Package</a>
+        <a href="#use-cases" class="nav-link">Use Cases</a>
+        <a href="https://github.com/mwemanoor/tz-locations" target="_blank" class="nav-link flex items-center gap-1">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.npmjs.com/package/tz-locations" target="_blank" class="nav-link">npm</a>
+      </div>
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden text-zinc-400 p-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 px-4 py-3 space-y-2 text-sm text-zinc-400">
+      <a href="#api" class="block py-1 nav-link">API Reference</a>
+      <a href="#package" class="block py-1 nav-link">npm Package</a>
+      <a href="#use-cases" class="block py-1 nav-link">Use Cases</a>
+      <a href="https://github.com/mwemanoor/tz-locations" target="_blank" class="block py-1 nav-link">GitHub</a>
+      <a href="https://www.npmjs.com/package/tz-locations" target="_blank" class="block py-1 nav-link">npm</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-600/10 to-transparent pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-4 py-20 md:py-32 text-center relative">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+        The definitive<br>Tanzania locations API
+      </h1>
+      <p class="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto">
+        Complete address hierarchy from regions to streets, with postcodes. REST API on the edge + offline npm package.
+      </p>
+
+      <!-- Stats bar -->
+      <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-10">
+        <div class="text-center">
+          <div class="text-2xl md:text-3xl font-bold text-white">31</div>
+          <div class="text-xs text-zinc-500 uppercase tracking-wider">Regions</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl md:text-3xl font-bold text-white">168</div>
+          <div class="text-xs text-zinc-500 uppercase tracking-wider">Districts</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl md:text-3xl font-bold text-white">4,054</div>
+          <div class="text-xs text-zinc-500 uppercase tracking-wider">Wards</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl md:text-3xl font-bold text-white">75,061</div>
+          <div class="text-xs text-zinc-500 uppercase tracking-wider">Streets</div>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#api" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-lg transition">
+          Explore API
+        </a>
+        <a href="#package" class="px-6 py-3 bg-white/10 hover:bg-white/15 text-white font-medium rounded-lg transition border border-white/10">
+          Install Package
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">The Problem</h2>
+      <p class="text-zinc-400 text-lg leading-relaxed">
+        There's no structured, developer-friendly address data for Tanzania. Every team building for TZ scrapes the same postal website, maintains brittle spreadsheets, or hardcodes a handful of locations. The data exists — but not in a format developers can use.
+      </p>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold text-white mb-10 text-center">The Solution</h2>
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <!-- REST API card -->
+      <div class="p-6 rounded-xl border border-white/10 bg-surface-800">
+        <div class="w-10 h-10 rounded-lg bg-brand-600/20 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-2">REST API</h3>
+        <p class="text-zinc-400 text-sm mb-4">Edge-deployed on Cloudflare Workers with D1. 12 endpoints, full-text search, autocomplete, CORS enabled.</p>
+        <ul class="text-sm text-zinc-500 space-y-1">
+          <li>- Sub-50ms latency from Africa</li>
+          <li>- FTS5 full-text search</li>
+          <li>- HATEOAS navigation links</li>
+          <li>- Rate limiting: 100 req/min</li>
+        </ul>
+      </div>
+      <!-- npm package card -->
+      <div class="p-6 rounded-xl border border-white/10 bg-surface-800">
+        <div class="w-10 h-10 rounded-lg bg-green-600/20 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-2">npm Package</h3>
+        <p class="text-zinc-400 text-sm mb-4">Offline-first, fully typed, zero network dependency. All 75K+ locations bundled with typed lookup functions.</p>
+        <ul class="text-sm text-zinc-500 space-y-1">
+          <li>- TypeScript-first with full types</li>
+          <li>- Lazy Map indexes for O(1) lookups</li>
+          <li>- Zero dependencies</li>
+          <li>- Works offline / edge / mobile</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- API Reference -->
+  <section id="api" class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">API Reference</h2>
+    <p class="text-zinc-400 mb-4">Base URL: <code class="text-brand-400 bg-surface-800 px-2 py-0.5 rounded text-sm">https://tz-locations-api.mwemanoor.workers.dev</code></p>
+
+    <div class="mb-6 p-4 rounded-lg border border-white/10 bg-surface-800 text-sm">
+      <p class="text-zinc-300 mb-2"><strong>Response format:</strong> All responses use <code class="text-brand-400">{ data, meta }</code> envelope.</p>
+      <p class="text-zinc-300 mb-2"><strong>Errors:</strong> <code class="text-brand-400">{ error: { code, message } }</code></p>
+      <p class="text-zinc-300 mb-2"><strong>Rate limiting:</strong> 100 requests/minute per IP.</p>
+      <p class="text-zinc-300"><strong>Navigation:</strong> Responses include <code class="text-brand-400">_links</code> for HATEOAS navigation.</p>
+    </div>
+
+    <!-- Regions -->
+    <h3 class="text-lg font-semibold text-white mt-10 mb-4 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-brand-500"></span> Regions
+    </h3>
+
+    <div class="space-y-4">
+      <!-- GET /v1/regions -->
+      <div class="endpoint-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="method-badge method-get">GET</span>
+          <code class="text-white text-sm">/v1/regions</code>
+        </div>
+        <p class="text-zinc-400 text-sm mb-3">List all 31 regions.</p>
+        <div class="code-block relative">
+          <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+          <pre class="p-4 text-sm text-zinc-300"><code>curl https://tz-locations-api.mwemanoor.workers.dev/v1/regions</code></pre>
+        </div>
+        <details class="mt-3">
+          <summary class="text-sm text-zinc-500 cursor-pointer hover:text-zinc-300">Example response</summary>
+          <div class="code-block relative mt-2">
+            <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+            <pre class="p-4 text-sm text-zinc-300"><code>{
+  "data": [
+    { "name": "Arusha", "slug": "arusha", "_links": { "self": "/v1/regions/arusha", "districts": "/v1/regions/arusha/districts" } },
+    { "name": "Dar es Salaam", "slug": "dar-es-salaam", "_links": { "self": "/v1/regions/dar-es-salaam", "districts": "/v1/regions/dar-es-salaam/districts" } }
+  ],
+  "meta": { "total": 31 }
+}</code></pre>
+          </div>
+        </details>
+        <button class="mt-3 text-xs text-brand-400 hover:text-brand-300 font-medium" onclick="tryEndpoint(this, '/v1/regions')">Try it &rarr;</button>
+        <div class="try-response hidden mt-2"></div>
+      </div>
+
+      <!-- GET /v1/regions/:slug -->
+      <div class="endpoint-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="method-badge method-get">GET</span>
+          <code class="text-white text-sm">/v1/regions/:slug</code>
+        </div>
+        <p class="text-zinc-400 text-sm mb-3">Get a single region by slug.</p>
+        <table class="text-sm text-zinc-400 mb-3 w-full">
+          <thead><tr class="text-left text-zinc-500"><th class="pr-4 pb-1">Param</th><th class="pr-4 pb-1">Type</th><th class="pb-1">Description</th></tr></thead>
+          <tbody><tr><td class="pr-4"><code class="text-brand-400">slug</code></td><td class="pr-4">string</td><td>Region slug, e.g. <code>dar-es-salaam</code></td></tr></tbody>
+        </table>
+        <div class="code-block relative">
+          <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+          <pre class="p-4 text-sm text-zinc-300"><code>curl https://tz-locations-api.mwemanoor.workers.dev/v1/regions/dar-es-salaam</code></pre>
+        </div>
+        <button class="mt-3 text-xs text-brand-400 hover:text-brand-300 font-medium" onclick="tryEndpoint(this, '/v1/regions/dar-es-salaam')">Try it &rarr;</button>
+        <div class="try-response hidden mt-2"></div>
+      </div>
+
+      <!-- GET /v1/regions/:slug/districts -->
+      <div class="endpoint-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="method-badge method-get">GET</span>
+          <code class="text-white text-sm">/v1/regions/:slug/districts</code>
+        </div>
+        <p class="text-zinc-400 text-sm mb-3">List districts in a region.</p>
+        <table class="text-sm text-zinc-400 mb-3 w-full">
+          <thead><tr class="text-left text-zinc-500"><th class="pr-4 pb-1">Param</th><th class="pr-4 pb-1">Type</th><th class="pb-1">Description</th></tr></thead>
+          <tbody><tr><td class="pr-4"><code class="text-brand-400">slug</code></td><td class="pr-4">string</td><td>Region slug</td></tr></tbody>
+        </table>
+        <div class="code-block relative">
+          <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+          <pre class="p-4 text-sm text-zinc-300"><code>curl https://tz-locations-api.mwemanoor.workers.dev/v1/regions/dar-es-salaam/districts</code></pre>
+        </div>
+        <button class="mt-3 text-xs text-brand-400 hover:text-brand-300 font-medium" onclick="tryEndpoint(this, '/v1/regions/dar-es-salaam/districts')">Try it &rarr;</button>
+        <div class="try-response hidden mt-2"></div>
+      </div>
+    </div>
+
+    <!-- Districts -->
+    <h3 class="text-lg font-semibold text-white mt-10 mb-4 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-brand-500"></span> Districts
+    </h3>
+
+    <div class="space-y-4">
+      <!-- GET /v1/districts/:slug -->
+      <div class="endpoint-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="method-badge method-get">GET</span>
+          <code class="text-white text-sm">/v1/districts/:slug</code>
+        </div>
+        <p class="text-zinc-400 text-sm mb-3">Get a single district by slug.</p>
+        <table class="text-sm text-zinc-400 mb-3 w-full">
+          <thead><tr class="text-left text-zinc-500"><th class="pr-4 pb-1">Param</th><th class="pr-4 pb-1">Type</th><th class="pb-1">Description</th></tr></thead>
+          <tbody><tr><td class="pr-4"><code class="text-brand-400">slug</code></td><td class="pr-4">string</td><td>District slug, e.g. <code>ilala</code></td></tr></tbody>
+        </table>
+        <div class="code-block relative">
+          <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+          <pre class="p-4 text-sm text-zinc-300"><code>curl https://tz-locations-api.mwemanoor.workers.dev/v1/districts/ilala</code></pre>
+        </div>
+        <button class="mt-3 text-xs text-brand-400 hover:text-brand-300 font-medium" onclick="tryEndpoint(this, '/v1/districts/ilala')">Try it &rarr;</button>
+        <div class="try-response hidden mt-2"></div>
+      </div>
+
+      <!-- GET /v1/districts/:slug/wards -->
+      <div class="endpoint-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="method-badge method-get">GET</span>
+          <code class="text-white text-sm">/v1/districts/:slug/wards</code>
+        </div>
+        <p class="text-zinc-400 text-sm mb-3">List wards in a district.</p>
+        <table class="text-sm text-zinc-400 mb-3 w-full">
+          <thead><tr class="text-left text-zinc-500"><th class="pr-4 pb-1">Param</th><th class="pr-4 pb-1">Type</th><th class="pb-1">Description</th></tr></thead>
+          <tbody><tr><td class="pr-4"><code class="text-brand-400">slug</code></td><td class="pr-4">string</td><td>District slug</td></tr></tbody>
+        </table>
+        <div class="code-block relative">
+          <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+          <pre class="p-4 text-sm text-zinc-300"><code>curl https://tz-locations-api.mwemanoor.workers.dev/v1/districts/ilala/wards</code></pre>
+        </div>
+        <button class="mt-3 text-xs text-brand-400 hover:text-brand-300 font-medium" onclick="tryEndpoint(this, '/v1/districts/ilala/wards')">Try it &rarr;</button>
+        <div class="try-response hidden mt-2"></div>
+      </div>
+    </div>
+
+    <!-- Wards -->
+    <h3 class="text-lg font-semibold text-white mt-10 mb-4 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-brand-500"></span> Wards
+    </h3>
+
+    <div class="space-y-4">
+      <!-- GET /v1/wards/:slug -->
+      <div class="endpoint-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="method-badge method-get">GET</span>
+          <code class="text-white text-sm">/v1/wards/:slug</code>
+        </div>
+        <p class="text-zinc-400 text-sm mb-3">Get a single ward with its postcode.</p>
+        <table class="text-sm text-zinc-400 mb-3 w-full">
+          <thead><tr class="text-left text-zinc-500"><th class="pr-4 pb-1">Param</th><th class="pr-4 pb-1">Type</th><th class="pb-1">Description</th></tr></thead>
+          <tbody><tr><td class="pr-4"><code class="text-brand-400">slug</code></td><td class="pr-4">string</td><td>Ward slug, e.g. <code>buguruni</code></td></tr></tbody>
+        </table>
+        <div class="code-block relative">
+          <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+          <pre class="p-4 text-sm text-zinc-300"><code>curl https://tz-locations-api.mwemanoor.workers.dev/v1/wards/buguruni</code></pre>
+        </div>
+        <button class="mt-3 text-xs text-brand-400 hover:text-brand-300 font-medium" onclick="tryEndpoint(this, '/v1/wards/buguruni')">Try it &rarr;</button>
+        <div class="try-response hidden mt-2"></div>
+      </div>
+
+      <!-- GET /v1/wards/:slug/streets -->
+      <div class="endpoint-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="method-badge method-get">GET</span>
+          <code class="text-white text-sm">/v1/wards/:slug/streets</code>
+        </div>
+        <p class="text-zinc-400 text-sm mb-3">List streets in a ward.</p>
+        <table class="text-sm text-zinc-400 mb-3 w-full">
+          <thead><tr class="text-left text-zinc-500"><th class="pr-4 pb-1">Param</th><th class="pr-4 pb-1">Type</th><th class="pb-1">Description</th></tr></thead>
+          <tbody><tr><td class="pr-4"><code class="text-brand-400">slug</code></td><td class="pr-4">string</td><td>Ward slug</td></tr></tbody>
+        </table>
+        <div class="code-block relative">
+          <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+          <pre class="p-4 text-sm text-zinc-300"><code>curl https://tz-locations-api.mwemanoor.workers.dev/v1/wards/buguruni/streets</code></pre>
+        </div>
+        <button class="mt-3 text-xs text-brand-400 hover:text-brand-300 font-medium" onclick="tryEndpoint(this, '/v1/wards/buguruni/streets')">Try it &rarr;</button>
+        <div class="try-response hidden mt-2"></div>
+      </div>
+    </div>
+
+    <!-- Streets -->
+    <h3 class="text-lg font-semibold text-white mt-10 mb-4 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-brand-500"></span> Streets
+    </h3>
+
+    <div class="space-y-4">
+      <div class="endpoint-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="method-badge method-get">GET</span>
+          <code class="text-white text-sm">/v1/streets/:id</code>
+        </div>
+        <p class="text-zinc-400 text-sm mb-3">Get a single street by ID.</p>
+        <table class="text-sm text-zinc-400 mb-3 w-full">
+          <thead><tr class="text-left text-zinc-500"><th class="pr-4 pb-1">Param</th><th class="pr-4 pb-1">Type</th><th class="pb-1">Description</th></tr></thead>
+          <tbody><tr><td class="pr-4"><code class="text-brand-400">id</code></td><td class="pr-4">number</td><td>Street ID</td></tr></tbody>
+        </table>
+        <div class="code-block relative">
+          <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+          <pre class="p-4 text-sm text-zinc-300"><code>curl https://tz-locations-api.mwemanoor.workers.dev/v1/streets/1</code></pre>
+        </div>
+        <button class="mt-3 text-xs text-brand-400 hover:text-brand-300 font-medium" onclick="tryEndpoint(this, '/v1/streets/1')">Try it &rarr;</button>
+        <div class="try-response hidden mt-2"></div>
+      </div>
+    </div>
+
+    <!-- Postcodes -->
+    <h3 class="text-lg font-semibold text-white mt-10 mb-4 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-brand-500"></span> Postcodes
+    </h3>
+
+    <div class="space-y-4">
+      <div class="endpoint-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="method-badge method-get">GET</span>
+          <code class="text-white text-sm">/v1/postcodes/:postcode</code>
+        </div>
+        <p class="text-zinc-400 text-sm mb-3">Lookup a location by 5-digit postcode. Returns the ward and all streets with that postcode.</p>
+        <table class="text-sm text-zinc-400 mb-3 w-full">
+          <thead><tr class="text-left text-zinc-500"><th class="pr-4 pb-1">Param</th><th class="pr-4 pb-1">Type</th><th class="pb-1">Description</th></tr></thead>
+          <tbody><tr><td class="pr-4"><code class="text-brand-400">postcode</code></td><td class="pr-4">string</td><td>5-digit postcode, e.g. <code>12102</code></td></tr></tbody>
+        </table>
+        <div class="code-block relative">
+          <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+          <pre class="p-4 text-sm text-zinc-300"><code>curl https://tz-locations-api.mwemanoor.workers.dev/v1/postcodes/12102</code></pre>
+        </div>
+        <details class="mt-3">
+          <summary class="text-sm text-zinc-500 cursor-pointer hover:text-zinc-300">Example response</summary>
+          <div class="code-block relative mt-2">
+            <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+            <pre class="p-4 text-sm text-zinc-300"><code>{
+  "data": {
+    "ward": { "name": "Buguruni", "slug": "buguruni", "postcode": "12102", "district_slug": "ilala", "region_slug": "dar-es-salaam" },
+    "streets": [
+      { "name": "Malapa", "postcode": "12102" },
+      { "name": "Mnyamani", "postcode": "12102" }
+    ]
+  }
+}</code></pre>
+          </div>
+        </details>
+        <button class="mt-3 text-xs text-brand-400 hover:text-brand-300 font-medium" onclick="tryEndpoint(this, '/v1/postcodes/12102')">Try it &rarr;</button>
+        <div class="try-response hidden mt-2"></div>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <h3 class="text-lg font-semibold text-white mt-10 mb-4 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-brand-500"></span> Search
+    </h3>
+
+    <div class="space-y-4">
+      <!-- GET /v1/search -->
+      <div class="endpoint-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="method-badge method-get">GET</span>
+          <code class="text-white text-sm">/v1/search</code>
+        </div>
+        <p class="text-zinc-400 text-sm mb-3">Full-text search across all locations using FTS5.</p>
+        <table class="text-sm text-zinc-400 mb-3 w-full">
+          <thead><tr class="text-left text-zinc-500"><th class="pr-4 pb-1">Param</th><th class="pr-4 pb-1">Type</th><th class="pb-1">Description</th></tr></thead>
+          <tbody>
+            <tr><td class="pr-4"><code class="text-brand-400">q</code></td><td class="pr-4">string</td><td>Search query (required)</td></tr>
+            <tr><td class="pr-4"><code class="text-brand-400">type</code></td><td class="pr-4">string</td><td>Filter by type: <code>region</code>, <code>district</code>, <code>ward</code>, <code>street</code></td></tr>
+            <tr><td class="pr-4"><code class="text-brand-400">limit</code></td><td class="pr-4">number</td><td>Max results (default: 20, max: 100)</td></tr>
+          </tbody>
+        </table>
+        <div class="code-block relative">
+          <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+          <pre class="p-4 text-sm text-zinc-300"><code>curl "https://tz-locations-api.mwemanoor.workers.dev/v1/search?q=buguruni&type=ward"</code></pre>
+        </div>
+        <button class="mt-3 text-xs text-brand-400 hover:text-brand-300 font-medium" onclick="tryEndpoint(this, '/v1/search?q=buguruni&type=ward')">Try it &rarr;</button>
+        <div class="try-response hidden mt-2"></div>
+      </div>
+
+      <!-- GET /v1/autocomplete -->
+      <div class="endpoint-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="method-badge method-get">GET</span>
+          <code class="text-white text-sm">/v1/autocomplete</code>
+        </div>
+        <p class="text-zinc-400 text-sm mb-3">Prefix-based autocomplete. Optimized for search-as-you-type UIs.</p>
+        <table class="text-sm text-zinc-400 mb-3 w-full">
+          <thead><tr class="text-left text-zinc-500"><th class="pr-4 pb-1">Param</th><th class="pr-4 pb-1">Type</th><th class="pb-1">Description</th></tr></thead>
+          <tbody>
+            <tr><td class="pr-4"><code class="text-brand-400">q</code></td><td class="pr-4">string</td><td>Search prefix (required, min 2 chars)</td></tr>
+            <tr><td class="pr-4"><code class="text-brand-400">limit</code></td><td class="pr-4">number</td><td>Max results (default: 10)</td></tr>
+          </tbody>
+        </table>
+        <div class="code-block relative">
+          <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+          <pre class="p-4 text-sm text-zinc-300"><code>curl "https://tz-locations-api.mwemanoor.workers.dev/v1/autocomplete?q=bug"</code></pre>
+        </div>
+        <button class="mt-3 text-xs text-brand-400 hover:text-brand-300 font-medium" onclick="tryEndpoint(this, '/v1/autocomplete?q=bug')">Try it &rarr;</button>
+        <div class="try-response hidden mt-2"></div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <h3 class="text-lg font-semibold text-white mt-10 mb-4 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-brand-500"></span> Stats
+    </h3>
+
+    <div class="space-y-4">
+      <div class="endpoint-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="method-badge method-get">GET</span>
+          <code class="text-white text-sm">/v1/stats</code>
+        </div>
+        <p class="text-zinc-400 text-sm mb-3">Get counts per location level.</p>
+        <div class="code-block relative">
+          <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+          <pre class="p-4 text-sm text-zinc-300"><code>curl https://tz-locations-api.mwemanoor.workers.dev/v1/stats</code></pre>
+        </div>
+        <details class="mt-3">
+          <summary class="text-sm text-zinc-500 cursor-pointer hover:text-zinc-300">Example response</summary>
+          <div class="code-block relative mt-2">
+            <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+            <pre class="p-4 text-sm text-zinc-300"><code>{
+  "data": {
+    "regions": 31,
+    "districts": 168,
+    "wards": 4054,
+    "streets": 75061
+  }
+}</code></pre>
+          </div>
+        </details>
+        <button class="mt-3 text-xs text-brand-400 hover:text-brand-300 font-medium" onclick="tryEndpoint(this, '/v1/stats')">Try it &rarr;</button>
+        <div class="try-response hidden mt-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- npm Package -->
+  <section id="package" class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">npm Package</h2>
+    <p class="text-zinc-400 mb-8">Offline-first, fully typed. All 75,061 locations bundled — no network needed.</p>
+
+    <!-- Install -->
+    <div class="code-block relative mb-8">
+      <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+      <pre class="p-4 text-sm text-zinc-300"><code>npm install tz-locations</code></pre>
+    </div>
+
+    <!-- Functions -->
+    <h3 class="text-lg font-semibold text-white mb-4">Functions</h3>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left text-zinc-500 border-b border-white/10">
+            <th class="pb-2 pr-4">Function</th>
+            <th class="pb-2 pr-4">Returns</th>
+            <th class="pb-2">Description</th>
+          </tr>
+        </thead>
+        <tbody class="text-zinc-300">
+          <tr class="border-b border-white/5"><td class="py-2 pr-4"><code class="text-brand-400">getRegions()</code></td><td class="pr-4"><code>Region[]</code></td><td>All 31 regions</td></tr>
+          <tr class="border-b border-white/5"><td class="py-2 pr-4"><code class="text-brand-400">getRegion(slug)</code></td><td class="pr-4"><code>Region | undefined</code></td><td>Single region by slug</td></tr>
+          <tr class="border-b border-white/5"><td class="py-2 pr-4"><code class="text-brand-400">getDistricts(regionSlug?)</code></td><td class="pr-4"><code>District[]</code></td><td>All districts or filtered by region</td></tr>
+          <tr class="border-b border-white/5"><td class="py-2 pr-4"><code class="text-brand-400">getDistrictsByRegion(slug)</code></td><td class="pr-4"><code>District[]</code></td><td>Districts in a region</td></tr>
+          <tr class="border-b border-white/5"><td class="py-2 pr-4"><code class="text-brand-400">getDistrict(slug)</code></td><td class="pr-4"><code>District | undefined</code></td><td>Single district by slug</td></tr>
+          <tr class="border-b border-white/5"><td class="py-2 pr-4"><code class="text-brand-400">getWards(region?, district?)</code></td><td class="pr-4"><code>Ward[]</code></td><td>All wards or filtered</td></tr>
+          <tr class="border-b border-white/5"><td class="py-2 pr-4"><code class="text-brand-400">getWardsByDistrict(region, district)</code></td><td class="pr-4"><code>Ward[]</code></td><td>Wards in a district</td></tr>
+          <tr class="border-b border-white/5"><td class="py-2 pr-4"><code class="text-brand-400">getWard(slug)</code></td><td class="pr-4"><code>Ward | undefined</code></td><td>Single ward by slug</td></tr>
+          <tr class="border-b border-white/5"><td class="py-2 pr-4"><code class="text-brand-400">getStreets(region, district, ward)</code></td><td class="pr-4"><code>Street[]</code></td><td>Streets in a ward</td></tr>
+          <tr class="border-b border-white/5"><td class="py-2 pr-4"><code class="text-brand-400">getByPostcode(postcode)</code></td><td class="pr-4"><code>PostcodeLookupResult</code></td><td>Lookup by 5-digit postcode</td></tr>
+          <tr class="border-b border-white/5"><td class="py-2 pr-4"><code class="text-brand-400">searchLocations(query, opts?)</code></td><td class="pr-4"><code>Location[]</code></td><td>Search by name</td></tr>
+          <tr><td class="py-2 pr-4"><code class="text-brand-400">getStats()</code></td><td class="pr-4"><code>object</code></td><td>Count of each entity type</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TypeScript types -->
+    <h3 class="text-lg font-semibold text-white mb-4">TypeScript Types</h3>
+    <div class="code-block relative mb-8">
+      <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+      <pre class="p-4 text-sm text-zinc-300"><code>interface Region {
+  name: string;
+  slug: string;
+}
+
+interface District {
+  name: string;
+  slug: string;
+  region_slug: string;
+}
+
+interface Ward {
+  name: string;
+  slug: string;
+  district_slug: string;
+  region_slug: string;
+}
+
+interface Street {
+  name: string;
+  postcode: string;
+  ward_slug: string;
+  district_slug: string;
+  region_slug: string;
+}
+
+interface PostcodeLookupResult {
+  ward: Ward | null;
+  streets: Street[];
+}</code></pre>
+    </div>
+
+    <!-- Examples -->
+    <h3 class="text-lg font-semibold text-white mb-4">Examples</h3>
+
+    <h4 class="text-sm font-medium text-zinc-300 mb-2">Cascading Address Select</h4>
+    <div class="code-block relative mb-6">
+      <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+      <pre class="p-4 text-sm text-zinc-300"><code>import { getRegions, getDistrictsByRegion, getWardsByDistrict, getStreets } from 'tz-locations';
+
+// Step 1: User picks a region
+const regions = getRegions();
+
+// Step 2: Load districts for selected region
+const districts = getDistrictsByRegion('dar-es-salaam');
+
+// Step 3: Load wards for selected district
+const wards = getWardsByDistrict('dar-es-salaam', 'ilala');
+
+// Step 4: Load streets for selected ward
+const streets = getStreets('dar-es-salaam', 'ilala', 'buguruni');</code></pre>
+    </div>
+
+    <h4 class="text-sm font-medium text-zinc-300 mb-2">Postcode Validation</h4>
+    <div class="code-block relative mb-6">
+      <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+      <pre class="p-4 text-sm text-zinc-300"><code>import { getByPostcode } from 'tz-locations';
+
+const result = getByPostcode('12102');
+if (result.ward) {
+  console.log(`${result.ward.name}, ${result.ward.district_slug}`);
+  // "Buguruni, ilala"
+}</code></pre>
+    </div>
+
+    <h4 class="text-sm font-medium text-zinc-300 mb-2">Search-as-you-type</h4>
+    <div class="code-block relative mb-6">
+      <button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)">Copy</button>
+      <pre class="p-4 text-sm text-zinc-300"><code>import { searchLocations } from 'tz-locations';
+
+function onSearchInput(query: string) {
+  if (query.length < 2) return [];
+  return searchLocations(query, { limit: 10 });
+}</code></pre>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section id="use-cases" class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Use Cases</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+      <div class="p-5 rounded-xl border border-white/10 bg-surface-800">
+        <h3 class="text-white font-semibold mb-2">E-commerce Checkout</h3>
+        <p class="text-zinc-400 text-sm">Cascading address dropdowns for shipping. Auto-fill postcode from ward selection.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-white/10 bg-surface-800">
+        <h3 class="text-white font-semibold mb-2">Delivery & Logistics</h3>
+        <p class="text-zinc-400 text-sm">Structured delivery zones. Map streets to wards for route planning.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-white/10 bg-surface-800">
+        <h3 class="text-white font-semibold mb-2">Government & NGO</h3>
+        <p class="text-zinc-400 text-sm">Location-based reporting and aggregation at region, district, or ward level.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-white/10 bg-surface-800">
+        <h3 class="text-white font-semibold mb-2">Fintech KYC</h3>
+        <p class="text-zinc-400 text-sm">Address verification for customer onboarding. Validate postcodes against known locations.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-white/10 bg-surface-800">
+        <h3 class="text-white font-semibold mb-2">Mobile Offline-First</h3>
+        <p class="text-zinc-400 text-sm">Use the npm package for offline address selection — no network required.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-white/10 bg-surface-800">
+        <h3 class="text-white font-semibold mb-2">Data Analysis</h3>
+        <p class="text-zinc-400 text-sm">Normalize and enrich address data. Join with external datasets using postcodes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 mt-16">
+    <div class="max-w-6xl mx-auto px-4 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
+        <div class="flex items-center gap-4">
+          <span class="font-semibold text-white">tz-locations</span>
+          <span>MIT License</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="https://github.com/mwemanoor/tz-locations" target="_blank" class="hover:text-white transition">GitHub</a>
+          <a href="https://www.npmjs.com/package/tz-locations" target="_blank" class="hover:text-white transition">npm</a>
+          <a href="https://tz-locations-api.mwemanoor.workers.dev" target="_blank" class="hover:text-white transition">API</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Copy to clipboard
+    function copyCode(btn) {
+      const code = btn.parentElement.querySelector('code');
+      navigator.clipboard.writeText(code.textContent).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('text-green-400');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('text-green-400');
+        }, 2000);
+      });
+    }
+
+    // Try endpoint
+    const API_BASE = 'https://tz-locations-api.mwemanoor.workers.dev';
+
+    function tryEndpoint(btn, path) {
+      const responseDiv = btn.nextElementSibling;
+      responseDiv.classList.remove('hidden');
+
+      const url = API_BASE + path;
+      responseDiv.innerHTML = '<pre class="p-4 text-sm text-zinc-500 bg-surface-800 rounded-lg border border-white/10"><code>Fetching ' + url + '...</code></pre>';
+
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          responseDiv.innerHTML = '<div class="code-block relative"><button class="copy-btn absolute top-2 right-2 text-xs text-zinc-500 hover:text-white bg-surface-900 px-2 py-1 rounded" onclick="copyCode(this)" style="opacity:1">Copy</button><pre class="p-4 text-sm text-green-300 bg-surface-800 rounded-lg border border-green-900/30"><code>' + escapeHtml(JSON.stringify(data, null, 2)) + '</code></pre></div>';
+        })
+        .catch(err => {
+          responseDiv.innerHTML = '<pre class="p-4 text-sm text-red-400 bg-surface-800 rounded-lg border border-red-900/30"><code>Error: ' + escapeHtml(err.message) + '\n\nThe API may not be deployed yet or is temporarily unavailable. Check https://tz-locations-api.mwemanoor.workers.dev/v1/stats</code></pre>';
+        });
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+  </script>
+
+</body>
+</html>
