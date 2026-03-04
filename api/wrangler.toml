@@ -1,4 +1,4 @@
-name = "address-tz-api"
+name = "tz-locations-api"
 main = "src/index.ts"
 compatibility_date = "2024-11-01"
 compatibility_flags = ["nodejs_compat"]
@@ -6,5 +6,5 @@ compatibility_flags = ["nodejs_compat"]
 [[d1_databases]]
 binding = "DB"
 database_name = "address-tz-db"
-database_id = "YOUR_DATABASE_ID"  # Replace after `wrangler d1 create address-tz-db`
+database_id = "65389483-269c-4c45-8811-00735924293c"
 migrations_dir = "src/db/migrations"
