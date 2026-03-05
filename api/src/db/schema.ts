@@ -16,10 +16,10 @@ export const districts = sqliteTable(
     name: text("name").notNull(),
     slug: text("slug").notNull(),
   },
-  (table) => [
-    uniqueIndex("uq_districts_region_slug").on(table.regionId, table.slug),
-    index("idx_districts_region").on(table.regionId),
-  ]
+  (table) => ({
+    uniqueRegionSlug: uniqueIndex("uq_districts_region_slug").on(table.regionId, table.slug),
+    regionIdx: index("idx_districts_region").on(table.regionId),
+  })
 );
 
 export const wards = sqliteTable(
@@ -33,11 +33,11 @@ export const wards = sqliteTable(
     slug: text("slug").notNull(),
     postcode: text("postcode").notNull(),
   },
-  (table) => [
-    uniqueIndex("uq_wards_district_slug").on(table.districtId, table.slug),
-    index("idx_wards_district").on(table.districtId),
-    index("idx_wards_postcode").on(table.postcode),
-  ]
+  (table) => ({
+    uniqueDistrictSlug: uniqueIndex("uq_wards_district_slug").on(table.districtId, table.slug),
+    districtIdx: index("idx_wards_district").on(table.districtId),
+    postcodeIdx: index("idx_wards_postcode").on(table.postcode),
+  })
 );
 
 export const streets = sqliteTable(
@@ -50,9 +50,9 @@ export const streets = sqliteTable(
     name: text("name").notNull(),
     postcode: text("postcode"),
   },
-  (table) => [
-    uniqueIndex("uq_streets_ward_name").on(table.wardId, table.name),
-    index("idx_streets_ward").on(table.wardId),
-    index("idx_streets_postcode").on(table.postcode),
-  ]
+  (table) => ({
+    uniqueWardName: uniqueIndex("uq_streets_ward_name").on(table.wardId, table.name),
+    wardIdx: index("idx_streets_ward").on(table.wardId),
+    postcodeIdx: index("idx_streets_postcode").on(table.postcode),
+  })
 );
