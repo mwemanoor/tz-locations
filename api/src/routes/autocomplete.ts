@@ -10,8 +10,8 @@ app.get("/", async (c) => {
   const q = c.req.query("q");
   const limit = Math.min(Math.max(Number(c.req.query("limit")) || 5, 1), 20);
 
-  if (!q || q.length < 1) {
-    return badRequest(c, "Query parameter 'q' is required");
+  if (!q || q.length < 2) {
+    return badRequest(c, "Query parameter 'q' is required (min 2 characters)");
   }
 
   const db = c.env.DB;
