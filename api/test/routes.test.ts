@@ -29,7 +29,7 @@ describe("API Root", () => {
     const res = await app.request("/", {}, { DB: createMockDB() });
     expect(res.status).toBe(200);
     const body = await res.json();
-    expect(body.name).toBe("address-tz");
+    expect(body.name).toBe("tz-locations-api");
     expect(body.endpoints).toBeDefined();
   });
 });
