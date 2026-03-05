@@ -174,6 +174,17 @@ const results = onSearchInput('kinu');
 // → [{ type: "district", name: "Kinondoni", ... }, ...]
 ```
 
+## Compatibility
+
+This package is **ESM-only** (`"type": "module"`).
+
+| Environment | Usage |
+|---|---|
+| Node.js 20.19+ / 22.12+ | `import` or `require()` both work |
+| Node.js 18–20.18 | Use `import` (or `await import('tz-locations')` for CJS) |
+| Bundlers (Vite, webpack, etc.) | Works out of the box |
+| Deno / Bun | Works out of the box |
+
 ## Performance
 
 All lookups use lazy-built `Map` indexes. The first call to a lookup function builds the index (fast — just iterating arrays), and subsequent calls are O(1). Data is loaded once from bundled JSON files.
