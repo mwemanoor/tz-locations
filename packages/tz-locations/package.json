@@ -12,8 +12,7 @@
     }
   },
   "files": [
-    "dist",
-    "src/data"
+    "dist"
   ],
   "sideEffects": false,
   "scripts": {
