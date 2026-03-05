@@ -1,6 +1,6 @@
 {
   "name": "tz-locations",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Complete Tanzania location data — regions, districts, wards, streets & postcodes",
   "type": "module",
   "main": "dist/index.js",
