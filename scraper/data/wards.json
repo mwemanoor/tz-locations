@@ -35,8 +35,8 @@
     "postcode": "23311"
   },
   {
-    "name": "King Ori",
-    "slug": "king-ori",
+    "name": "King'ori",
+    "slug": "kingori",
     "district_slug": "arumeru",
     "region_slug": "arusha",
     "postcode": "23316"
@@ -147,8 +147,8 @@
     "postcode": "23304"
   },
   {
-    "name": "Seela Sing Isi",
-    "slug": "seela-sing-isi",
+    "name": "Seela Sing'isi",
+    "slug": "seela-singisi",
     "district_slug": "arumeru",
     "region_slug": "arusha",
     "postcode": "23305"
@@ -203,8 +203,8 @@
     "postcode": "23227"
   },
   {
-    "name": "Ilkiding A",
-    "slug": "ilkiding-a",
+    "name": "Ilkiding'a",
+    "slug": "ilkidinga",
     "district_slug": "arusha",
     "region_slug": "arusha",
     "postcode": "23211"
@@ -609,8 +609,8 @@
     "postcode": "23601"
   },
   {
-    "name": "Mang Ola",
-    "slug": "mang-ola",
+    "name": "Mang'ola",
+    "slug": "mangola",
     "district_slug": "karatu",
     "region_slug": "arusha",
     "postcode": "23612"
@@ -644,8 +644,8 @@
     "postcode": "23603"
   },
   {
-    "name": "Elang Atadapash",
-    "slug": "elang-atadapash",
+    "name": "Elang'atadapash",
+    "slug": "elangatadapash",
     "district_slug": "longido",
     "region_slug": "arusha",
     "postcode": "23508"
@@ -1582,8 +1582,8 @@
     "postcode": "15116"
   },
   {
-    "name": "Chang Ombe",
-    "slug": "chang-ombe",
+    "name": "Chang'ombe",
+    "slug": "changombe",
     "district_slug": "temeke",
     "region_slug": "dar-es-salaam",
     "postcode": "15103"
@@ -2100,8 +2100,8 @@
     "postcode": "41403"
   },
   {
-    "name": "Makang Wa",
-    "slug": "makang-wa",
+    "name": "Makang'wa",
+    "slug": "makangwa",
     "district_slug": "chamwino",
     "region_slug": "dodoma",
     "postcode": "41421"
@@ -2415,8 +2415,8 @@
     "postcode": "41215"
   },
   {
-    "name": "Chang Ombe",
-    "slug": "chang-ombe",
+    "name": "Chang'ombe",
+    "slug": "changombe",
     "district_slug": "dodoma",
     "region_slug": "dodoma",
     "postcode": "41216"
@@ -2660,8 +2660,8 @@
     "postcode": "41116"
   },
   {
-    "name": "Ng Onng Onha",
-    "slug": "ng-onng-onha",
+    "name": "Ng'onng'onha",
+    "slug": "ngonngonha",
     "district_slug": "dodoma-cbd",
     "region_slug": "dodoma",
     "postcode": "41119"
@@ -3171,8 +3171,8 @@
     "postcode": "41628"
   },
   {
-    "name": "Mang Aliza",
-    "slug": "mang-aliza",
+    "name": "Mang'aliza",
+    "slug": "mangaliza",
     "district_slug": "mpwapwa",
     "region_slug": "dodoma",
     "postcode": "41633"
@@ -3262,8 +3262,8 @@
     "postcode": "41621"
   },
   {
-    "name": "Ving Hawe",
-    "slug": "ving-hawe",
+    "name": "Ving'hawe",
+    "slug": "vinghawe",
     "district_slug": "mpwapwa",
     "region_slug": "dodoma",
     "postcode": "41603"
@@ -3367,8 +3367,8 @@
     "postcode": "30506"
   },
   {
-    "name": "Ng Anzo",
-    "slug": "ng-anzo",
+    "name": "Ng'anzo",
+    "slug": "nganzo",
     "district_slug": "bukombe",
     "region_slug": "geita",
     "postcode": "30510"
@@ -3612,8 +3612,8 @@
     "postcode": "30109"
   },
   {
-    "name": "Bung Wangoko",
-    "slug": "bung-wangoko",
+    "name": "Bung'wangoko",
+    "slug": "bungwangoko",
     "district_slug": "geita",
     "region_slug": "geita",
     "postcode": "30129"
@@ -4186,8 +4186,8 @@
     "postcode": "51210"
   },
   {
-    "name": "Kising A",
-    "slug": "kising-a",
+    "name": "Kising'a",
+    "slug": "kisinga",
     "district_slug": "iringa",
     "region_slug": "iringa",
     "postcode": "51222"
@@ -4298,8 +4298,8 @@
     "postcode": "51204"
   },
   {
-    "name": "Nyang Oro",
-    "slug": "nyang-oro",
+    "name": "Nyang'oro",
+    "slug": "nyangoro",
     "district_slug": "iringa",
     "region_slug": "iringa",
     "postcode": "51220"
@@ -4452,8 +4452,8 @@
     "postcode": "51114"
   },
   {
-    "name": "Bomalang Ombe",
-    "slug": "bomalang-ombe",
+    "name": "Bomalang'ombe",
+    "slug": "bomalangombe",
     "district_slug": "kilolo",
     "region_slug": "iringa",
     "postcode": "51308"
@@ -4515,8 +4515,8 @@
     "postcode": "51314"
   },
   {
-    "name": "Kising A",
-    "slug": "kising-a",
+    "name": "Kising'a",
+    "slug": "kisinga",
     "district_slug": "kilolo",
     "region_slug": "iringa",
     "postcode": "51323"
@@ -4557,15 +4557,15 @@
     "postcode": "51304"
   },
   {
-    "name": "Ng Ang Ange",
-    "slug": "ng-ang-ange",
+    "name": "Ng'ang'ange",
+    "slug": "ngangange",
     "district_slug": "kilolo",
     "region_slug": "iringa",
     "postcode": "51320"
   },
   {
-    "name": "Ng Uruhe",
-    "slug": "ng-uruhe",
+    "name": "Ng'uruhe",
+    "slug": "nguruhe",
     "district_slug": "kilolo",
     "region_slug": "iringa",
     "postcode": "51316"
@@ -7343,8 +7343,8 @@
     "postcode": "47601"
   },
   {
-    "name": "Bomang Ombe",
-    "slug": "bomang-ombe",
+    "name": "Bomang'ombe",
+    "slug": "bomangombe",
     "district_slug": "hai",
     "region_slug": "kilimanjaro",
     "postcode": "25312"
@@ -7791,8 +7791,8 @@
     "postcode": "25112"
   },
   {
-    "name": "Ng Ambo",
-    "slug": "ng-ambo",
+    "name": "Ng'ambo",
+    "slug": "ngambo",
     "district_slug": "moshi-cbd",
     "region_slug": "kilimanjaro",
     "postcode": "25118"
@@ -7910,8 +7910,8 @@
     "postcode": "25504"
   },
   {
-    "name": "Lang Ata",
-    "slug": "lang-ata",
+    "name": "Lang'ata",
+    "slug": "langata",
     "district_slug": "mwanga",
     "region_slug": "kilimanjaro",
     "postcode": "25512"
@@ -9009,8 +9009,8 @@
     "postcode": "65103"
   },
   {
-    "name": "Ng Apa",
-    "slug": "ng-apa",
+    "name": "Ng'apa",
+    "slug": "ngapa",
     "district_slug": "lindi-cbd",
     "region_slug": "lindi",
     "postcode": "65115"
@@ -9373,8 +9373,8 @@
     "postcode": "65320"
   },
   {
-    "name": "Nang Ondo",
-    "slug": "nang-ondo",
+    "name": "Nang'ondo",
+    "slug": "nangondo",
     "district_slug": "nachingwea",
     "region_slug": "lindi",
     "postcode": "65330"
@@ -9520,8 +9520,8 @@
     "postcode": "65603"
   },
   {
-    "name": "Mbwemkuru Machang Anja",
-    "slug": "mbwemkuru-machang-anja",
+    "name": "Mbwemkuru Machang'anja",
+    "slug": "mbwemkuru-machanganja",
     "district_slug": "ruangwa",
     "region_slug": "lindi",
     "postcode": "65622"
@@ -9569,8 +9569,8 @@
     "postcode": "65617"
   },
   {
-    "name": "Narung Ombe",
-    "slug": "narung-ombe",
+    "name": "Narung'ombe",
+    "slug": "narungombe",
     "district_slug": "ruangwa",
     "region_slug": "lindi",
     "postcode": "65608"
@@ -10738,8 +10738,8 @@
     "postcode": "31531"
   },
   {
-    "name": "Nyamang Uta",
-    "slug": "nyamang-uta",
+    "name": "Nyamang'uta",
+    "slug": "nyamanguta",
     "district_slug": "bunda",
     "region_slug": "mara",
     "postcode": "31524"
@@ -11256,8 +11256,8 @@
     "postcode": "31314"
   },
   {
-    "name": "Kyang Ombe",
-    "slug": "kyang-ombe",
+    "name": "Kyang'ombe",
+    "slug": "kyangombe",
     "district_slug": "rorya",
     "region_slug": "mara",
     "postcode": "31317"
@@ -11536,15 +11536,15 @@
     "postcode": "31618"
   },
   {
-    "name": "Ring Wani",
-    "slug": "ring-wani",
+    "name": "Ring'wani",
+    "slug": "ringwani",
     "district_slug": "serengeti",
     "region_slug": "mara",
     "postcode": "31614"
   },
   {
-    "name": "Rung Abure",
-    "slug": "rung-abure",
+    "name": "Rung'abure",
+    "slug": "rungabure",
     "district_slug": "serengeti",
     "region_slug": "mara",
     "postcode": "31612"
@@ -11599,8 +11599,8 @@
     "postcode": "31430"
   },
   {
-    "name": "Gorong A",
-    "slug": "gorong-a",
+    "name": "Gorong'a",
+    "slug": "goronga",
     "district_slug": "tarime",
     "region_slug": "mara",
     "postcode": "31422"
@@ -11928,8 +11928,8 @@
     "postcode": "53820"
   },
   {
-    "name": "Nkung Ungu",
-    "slug": "nkung-ungu",
+    "name": "Nkung'ungu",
+    "slug": "nkungungu",
     "district_slug": "chunya",
     "region_slug": "mbeya",
     "postcode": "53834"
@@ -13181,8 +13181,8 @@
     "postcode": "71112"
   },
   {
-    "name": "Jang Ombe",
-    "slug": "jang-ombe",
+    "name": "Jang'ombe",
+    "slug": "jangombe",
     "district_slug": "mjini",
     "region_slug": "mjini-magharibi",
     "postcode": "71109"
@@ -13433,8 +13433,8 @@
     "postcode": "67715"
   },
   {
-    "name": "Ching Anda",
-    "slug": "ching-anda",
+    "name": "Ching'anda",
+    "slug": "chinganda",
     "district_slug": "kilombero",
     "region_slug": "morogoro",
     "postcode": "67534"
@@ -13538,15 +13538,15 @@
     "postcode": "67509"
   },
   {
-    "name": "Mang Ula",
-    "slug": "mang-ula",
+    "name": "Mang'ula",
+    "slug": "mangula",
     "district_slug": "kilombero",
     "region_slug": "morogoro",
     "postcode": "67505"
   },
   {
-    "name": "Mang Ula B",
-    "slug": "mang-ula-b",
+    "name": "Mang'ula B",
+    "slug": "mangula-b",
     "district_slug": "kilombero",
     "region_slug": "morogoro",
     "postcode": "67524"
@@ -13937,8 +13937,8 @@
     "postcode": "67430"
   },
   {
-    "name": "Uleling Ombe",
-    "slug": "uleling-ombe",
+    "name": "Uleling'ombe",
+    "slug": "ulelingombe",
     "district_slug": "kilosa",
     "region_slug": "morogoro",
     "postcode": "67437"
@@ -14903,8 +14903,8 @@
     "postcode": "63539"
   },
   {
-    "name": "Makong Onda",
-    "slug": "makong-onda",
+    "name": "Makong'onda",
+    "slug": "makongonda",
     "district_slug": "masasi",
     "region_slug": "mtwara",
     "postcode": "63537"
@@ -15785,8 +15785,8 @@
     "postcode": "63419"
   },
   {
-    "name": "Mkulung Ulu",
-    "slug": "mkulung-ulu",
+    "name": "Mkulung'ulu",
+    "slug": "mkulungulu",
     "district_slug": "newala",
     "region_slug": "mtwara",
     "postcode": "63435"
@@ -16408,8 +16408,8 @@
     "postcode": "33804"
   },
   {
-    "name": "Mwang Halanga",
-    "slug": "mwang-halanga",
+    "name": "Mwang'halanga",
+    "slug": "mwanghalanga",
     "district_slug": "kwimba",
     "region_slug": "mwanza",
     "postcode": "33807"
@@ -16422,8 +16422,8 @@
     "postcode": "33829"
   },
   {
-    "name": "Ng Hundi",
-    "slug": "ng-hundi",
+    "name": "Ng'hundi",
+    "slug": "nghundi",
     "district_slug": "kwimba",
     "region_slug": "mwanza",
     "postcode": "33808"
@@ -16618,8 +16618,8 @@
     "postcode": "33407"
   },
   {
-    "name": "Ng Haya",
-    "slug": "ng-haya",
+    "name": "Ng'haya",
+    "slug": "nghaya",
     "district_slug": "magu",
     "region_slug": "mwanza",
     "postcode": "33413"
@@ -17647,8 +17647,8 @@
     "postcode": "59415"
   },
   {
-    "name": "Nkomang Ombe",
-    "slug": "nkomang-ombe",
+    "name": "Nkomang'ombe",
+    "slug": "nkomangombe",
     "district_slug": "ludewa",
     "region_slug": "njombe",
     "postcode": "59420"
@@ -17773,8 +17773,8 @@
     "postcode": "59515"
   },
   {
-    "name": "Mang Oto",
-    "slug": "mang-oto",
+    "name": "Mang'oto",
+    "slug": "mangoto",
     "district_slug": "makete",
     "region_slug": "njombe",
     "postcode": "59502"
@@ -18235,8 +18235,8 @@
     "postcode": "75203"
   },
   {
-    "name": "Kiuyu Maziwang Ombe",
-    "slug": "kiuyu-maziwang-ombe",
+    "name": "Kiuyu Maziwang'ombe",
+    "slug": "kiuyu-maziwangombe",
     "district_slug": "micheweni",
     "region_slug": "pemba-north",
     "postcode": "75205"
@@ -18284,8 +18284,8 @@
     "postcode": "75202"
   },
   {
-    "name": "Wingwi Mapofu Wingwi",
-    "slug": "wingwi-mapofu-wingwi",
+    "name": "Wingwi Mapofu",
+    "slug": "wingwi-mapofu",
     "district_slug": "micheweni",
     "region_slug": "pemba-north",
     "postcode": "75204"
@@ -18480,8 +18480,8 @@
     "postcode": "74215"
   },
   {
-    "name": "Ng Ambwa",
-    "slug": "ng-ambwa",
+    "name": "Ng'ambwa",
+    "slug": "ngambwa",
     "district_slug": "chake-chake",
     "region_slug": "pemba-south",
     "postcode": "74211"
@@ -18571,8 +18571,8 @@
     "postcode": "74114"
   },
   {
-    "name": "Kisiwa Panza Kisiwa",
-    "slug": "kisiwa-panza-kisiwa",
+    "name": "Kisiwa Panza",
+    "slug": "kisiwa-panza",
     "district_slug": "mkoani",
     "region_slug": "pemba-south",
     "postcode": "74111"
@@ -18641,8 +18641,8 @@
     "postcode": "74113"
   },
   {
-    "name": "Ng Ombeni Ng",
-    "slug": "ng-ombeni-ng",
+    "name": "Ng'ombeni",
+    "slug": "ngombeni",
     "district_slug": "mkoani",
     "region_slug": "pemba-south",
     "postcode": "74101"
@@ -19348,8 +19348,8 @@
     "postcode": "61512"
   },
   {
-    "name": "Kiparang Anda",
-    "slug": "kiparang-anda",
+    "name": "Kiparang'anda",
+    "slug": "kiparanganda",
     "district_slug": "mkuranga",
     "region_slug": "pwani",
     "postcode": "61502"
@@ -22743,8 +22743,8 @@
     "postcode": "39208"
   },
   {
-    "name": "Kinang Weli",
-    "slug": "kinang-weli",
+    "name": "Kinang'weli",
+    "slug": "kinangweli",
     "district_slug": "itilima",
     "region_slug": "simiyu",
     "postcode": "39219"
@@ -23037,8 +23037,8 @@
     "postcode": "39323"
   },
   {
-    "name": "Ng Wigwa",
-    "slug": "ng-wigwa",
+    "name": "Ng'wigwa",
+    "slug": "ngwigwa",
     "district_slug": "maswa",
     "region_slug": "simiyu",
     "postcode": "39312"
@@ -23079,8 +23079,8 @@
     "postcode": "39316"
   },
   {
-    "name": "Seng Wa",
-    "slug": "seng-wa",
+    "name": "Seng'wa",
+    "slug": "sengwa",
     "district_slug": "maswa",
     "region_slug": "simiyu",
     "postcode": "39306"
@@ -23296,8 +23296,8 @@
     "postcode": "39408"
   },
   {
-    "name": "Ng Hoboko",
-    "slug": "ng-hoboko",
+    "name": "Ng'hoboko",
+    "slug": "nghoboko",
     "district_slug": "meatu",
     "region_slug": "simiyu",
     "postcode": "39419"
@@ -23324,8 +23324,8 @@
     "postcode": "39406"
   },
   {
-    "name": "Dung Unyi",
-    "slug": "dung-unyi",
+    "name": "Dung'unyi",
+    "slug": "dungunyi",
     "district_slug": "ikungi",
     "region_slug": "singida",
     "postcode": "43617"
@@ -23422,8 +23422,8 @@
     "postcode": "43628"
   },
   {
-    "name": "Mang Onyi",
-    "slug": "mang-onyi",
+    "name": "Mang'onyi",
+    "slug": "mangonyi",
     "district_slug": "ikungi",
     "region_slug": "singida",
     "postcode": "43620"
@@ -24808,8 +24808,8 @@
     "postcode": "54429"
   },
   {
-    "name": "Chang Ombe",
-    "slug": "chang-ombe",
+    "name": "Chang'ombe",
+    "slug": "changombe",
     "district_slug": "songwe",
     "region_slug": "songwe",
     "postcode": "54115"
@@ -24997,8 +24997,8 @@
     "postcode": "45612"
   },
   {
-    "name": "Kining Inila",
-    "slug": "kining-inila",
+    "name": "Kining'inila",
+    "slug": "kininginila",
     "district_slug": "igunga",
     "region_slug": "tabora",
     "postcode": "45615"
@@ -25998,8 +25998,8 @@
     "postcode": "45116"
   },
   {
-    "name": "Ng Ambo",
-    "slug": "ng-ambo",
+    "name": "Ng'ambo",
+    "slug": "ngambo",
     "district_slug": "tabora-cbd",
     "region_slug": "tabora",
     "postcode": "45101"
@@ -26390,8 +26390,8 @@
     "postcode": "21817"
   },
   {
-    "name": "Kang Ata",
-    "slug": "kang-ata",
+    "name": "Kang'ata",
+    "slug": "kangata",
     "district_slug": "handeni",
     "region_slug": "tanga",
     "postcode": "21808"
@@ -27272,8 +27272,8 @@
     "postcode": "21743"
   },
   {
-    "name": "Mng Aro",
-    "slug": "mng-aro",
+    "name": "Mng'aro",
+    "slug": "mngaro",
     "district_slug": "lushoto",
     "region_slug": "tanga",
     "postcode": "21740"
@@ -27811,8 +27811,8 @@
     "postcode": "21303"
   },
   {
-    "name": "Kimang A",
-    "slug": "kimang-a",
+    "name": "Kimang'a",
+    "slug": "kimanga",
     "district_slug": "pangani",
     "region_slug": "tanga",
     "postcode": "21305"
