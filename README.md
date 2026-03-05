@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/tz-locations)](https://www.npmjs.com/package/tz-locations)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-The definitive Tanzania locations dataset — **31 regions, 168 districts, 4,054 wards, 75,061 streets** with postcodes.
+Tanzania Location addresses — **31 regions, 168 districts, 4,054 wards, 75,061 streets** with postcodes.
 
 ## Why
 
