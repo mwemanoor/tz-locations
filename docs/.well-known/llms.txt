@@ -22,7 +22,7 @@ Rate limit: 100 requests/minute. CORS enabled.
 - GET /v1/wards/:slug/streets — List streets in a ward. Returns: Street[]
 - GET /v1/streets/:id — Get single street by numeric ID. Returns: Street
 - GET /v1/postcodes/:postcode — Lookup by 5-digit postcode. Returns: { ward: Ward, streets: Street[] }
-- GET /v1/search?q=&type=&limit= — Full-text search (FTS5). Query params: q (required), type (region|district|ward|street), limit (default 20, max 100)
+- GET /v1/search?q=&type=&limit= — Full-text search (FTS5). Query params: q (required), type (region|district|ward|street), limit (default 10, max 50)
 - GET /v1/autocomplete?q=&limit= — Prefix autocomplete. Query params: q (required, min 2 chars), limit (default 10)
 - GET /v1/stats — Counts per location level. Returns: { regions, districts, wards, streets }
 
